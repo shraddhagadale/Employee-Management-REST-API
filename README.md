@@ -83,9 +83,9 @@ The application should now be running on:
 ```json
 {
   "id": 1,
-  "firstName": "John",
-  "lastName": "Doe",
-  "emailId": "john.doe@example.com"
+  "firstName": "Joe",
+  "lastName": "D",
+  "emailId": "joe.d@example.com"
 }
 
 ```
