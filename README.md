@@ -63,7 +63,6 @@ The application should now be running on:
 📩 **Request Body (JSON):**
 ```json
 {
-  "id": 1,
   "firstName": "John",
   "lastName": "Doe",
   "emailId": "john.doe@example.com"
