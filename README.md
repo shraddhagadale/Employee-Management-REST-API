@@ -74,10 +74,10 @@ The application should now be running on:
 ### **2. Get All Employees**
 **`GET /api/employees`**
 
-### 📌 **3. Get Employee by ID**
+### **3. Get Employee by ID**
 **`GET /api/employees/{id}`**
 
-### 📌 **4. Update Employee**
+### **4. Update Employee**
 **`PUT /api/employees/{id}`**  
 📩 **Request Body (JSON):**
 ```json
@@ -90,7 +90,7 @@ The application should now be running on:
 
 ```
 
-### 📌 **5. Delete Employee**
+### **5. Delete Employee**
 **`DELETE /api/employees/{id}`**
 
 ---
@@ -103,8 +103,4 @@ The application should now be running on:
 
 ---
 
-## 📝 License
-This project is **open-source** and free to use.
-
-🚀 **Happy Coding!** 😊
 
