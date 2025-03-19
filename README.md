@@ -101,6 +101,4 @@ The application should now be running on:
 3. Set **Content-Type** to `application/json` for `POST` and `PUT` requests.
 4. Use **http://localhost:8080/api/employees** as the base URL.
 
----
-
 
