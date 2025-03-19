@@ -60,17 +60,19 @@ The application should now be running on:
 
 ---
 
-## 🔥 API Endpoints
+##  API Endpoints
 
 ### 📌 **1. Create an Employee**
 **`POST /api/employees`**  
 📩 **Request Body (JSON):**
 ```json
 {
-  "name": "John Doe",
-  "email": "john@example.com",
-  "department": "Engineering"
+  "id": 1,
+  "firstName": "John",
+  "lastName": "Doe",
+  "emailId": "john.doe@example.com"
 }
+
 ```
 
 ### 📌 **2. Get All Employees**
@@ -84,10 +86,12 @@ The application should now be running on:
 📩 **Request Body (JSON):**
 ```json
 {
-  "name": "John Updated",
-  "email": "john.new@example.com",
-  "department": "HR"
+  "id": 1,
+  "firstName": "John",
+  "lastName": "Doe",
+  "emailId": "john.doe@example.com"
 }
+
 ```
 
 ### 📌 **5. Delete Employee**
