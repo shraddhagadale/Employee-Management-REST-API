@@ -73,8 +73,10 @@ The application should now be running on:
 ### **2. Get All Employees**
 **`GET /api/employees`**
 
+### **3. Get Employee by ID**
+GET /api/employees/{id}
 
-### **3. Update Employee**
+### **4. Update Employee**
 **`PUT /api/employees/{id}`**  
 📩 **Request Body (JSON):**
 ```json
@@ -86,7 +88,7 @@ The application should now be running on:
 }
 
 ```
- ### 4. Update Employee (Partially)
+ ### **5. Update Employee (Partially)**
 **`PATCH /api/employees/{id}`**  
 📩 **Request Body (JSON):** (You can provide one or more attributes)
 ```json
@@ -95,7 +97,7 @@ The application should now be running on:
 }
 ```
 
-### **5. Delete Employee**
+### **6. Delete Employee**
 **`DELETE /api/employees/{id}`**
 
 ---
