@@ -54,16 +54,6 @@ mvn spring-boot:run
 The application should now be running on:  
  **http://localhost:8080**
 
- ### 5. Update Employee (Partially)
-**`PATCH /api/employees/{id}`**  
-📩 **Request Body (JSON):** (You can provide one or more attributes)
-```json
-{
-  "firstName": "John",
-  "emailId": "john.updated@example.com"
-}
-
-
 ---
 
 ##  API Endpoints
@@ -96,8 +86,16 @@ The application should now be running on:
 }
 
 ```
+ ### 4. Update Employee (Partially)
+**`PATCH /api/employees/{id}`**  
+📩 **Request Body (JSON):** (You can provide one or more attributes)
+```json
+{
+  "emailId": "john.updated@example.com"
+}
+```
 
-### **4. Delete Employee**
+### **5. Delete Employee**
 **`DELETE /api/employees/{id}`**
 
 ---
