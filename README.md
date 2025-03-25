@@ -81,7 +81,7 @@ The application should now be running on:
 ### **3. Get Employee by empId**
 **`GET /api/employee/get-employee-id/{empId}`** 
 
-### **4. Update Employee (Full & Partial Update)**
+### **4. Update Employee**
 **`PUT /api/employee/update-employee/{empId}`**  
 📩 **Request Body (JSON):**
 ```json
