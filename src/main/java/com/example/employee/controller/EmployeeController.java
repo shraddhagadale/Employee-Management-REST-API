@@ -1,62 +1,57 @@
 package com.example.employee.controller;
 
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PatchMapping;
 import java.util.Map;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import com.example.employee.model.Employee;
 import com.example.employee.service.EmployeeService;
-
+import org.springframework.http.ResponseEntity;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/employee")
 public class EmployeeController {
-        @Autowired
-        EmployeeService empService;
-        
-        @RequestMapping(value="/employees", method=RequestMethod.POST)
-        public Employee createEmployee(@RequestBody Employee emp) {
-            return empService.createEmployee(emp);
-        }
-        @RequestMapping(value="/employees", method=RequestMethod.GET)
-        public List<Employee> readEmployees() {
-            return empService.getEmployees();
-        }
-        
-     // Get an Employee by ID
-        @RequestMapping(value = "/employees/{id}", method = RequestMethod.GET)
-        public ResponseEntity<Employee> getEmployeeById(@PathVariable(value = "id") Long employeeId) {
-            Employee employee = empService.getEmployeeById(employeeId); 
-            return ResponseEntity.ok().body(employee); 
-        }
 
+    @Autowired
+    EmployeeService empService;
 
-        @RequestMapping(value="/employees/{empId}", method=RequestMethod.PUT)
-        public Employee readEmployees(@PathVariable(value = "empId") Long id, @RequestBody Employee empDetails) {
-            return empService.updateEmployee(id, empDetails);
-        }
+    // Create Employee
+    @PostMapping("/create-employee")
+    public Employee createEmployee(@RequestBody Employee emp) {
+        return empService.createEmployee(emp);
+    }
 
-        @RequestMapping(value="/employees/{empId}", method=RequestMethod.DELETE)
-        public void deleteEmployees(@PathVariable(value = "empId") Long id) {
-            empService.deleteEmployee(id);
-        }
-        
-        @PatchMapping("/employees/{id}")
-        public ResponseEntity<Employee> updateEmployeePartially(
-                @PathVariable(value = "id") Long id,
-                @RequestBody Map<String, Object> updates) {
-            Employee updatedEmployee = empService.updateEmployeePartially(id, updates);
-            return ResponseEntity.ok(updatedEmployee);
-        }
+    // Get All Employees
+    @GetMapping("/get-employee")
+    public List<Employee> readEmployees() {
+        return empService.getEmployees();
+    }
+
+    // Get Employee by empId
+    @GetMapping("/get-employee-id/{empId}")
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable(value = "empId") String empId) {
+        Employee employee = empService.getEmployeeById(empId); 
+        return ResponseEntity.ok().body(employee); 
+    }
+
+    // Update Employee (Handles both Full & Partial Update)
+    @PutMapping("/update-employee/{empId}")
+    public Employee updateEmployee(
+            @PathVariable(value = "empId") String empId,
+            @RequestBody(required = false) Employee employeeDetails,
+            @RequestParam(required = false) Map<String, Object> updates) {
+
+        return empService.updateEmployee(empId, employeeDetails, updates);
+    }
+
+    // Delete Employee
+    @DeleteMapping("/delete-employee/{empId}")
+    public ResponseEntity<String> deleteEmployees(@PathVariable(value = "empId") String id) {
+        String responseMessage = empService.deleteEmployee(id);
+        return ResponseEntity.ok(responseMessage);
+    }
+    
+
 
 }
