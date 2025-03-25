@@ -3,10 +3,13 @@
 A **Spring Boot REST API** for managing employee records, including **CRUD operations** (Create, Read, Update, Delete) using **Spring Boot, MySQL, JPA, and Hibernate**.
 
 ## 🚀 Features
--  **Create** a new employee.
--  **Retrieve** all employees.
--  **Update** employee details.
--  **Delete** an employee.
+- **Create** a new employee with custom `empId` (Numbers + Characters).
+- **Retrieve** all employees sorted by `empId` in ascending order.
+- **Retrieve** an employee by their `empId`.
+- **Update** employee details (Full & Partial update using a single endpoint).
+- **Delete** an employee with a success message.
+- **Improved Error Handling** (Invalid field errors, Non-existent employee errors).
+- **Enhanced URL Structure** for clarity and consistency.
 
 ---
 
@@ -33,7 +36,6 @@ Update your **`src/main/resources/application.properties`** file with your MySQL
 ```
 spring.datasource.username=your-username
 spring.datasource.password=your-password
-
 ```
 
 ### **Step 3: Run MySQL**
@@ -49,10 +51,11 @@ CREATE DATABASE employee_schema;
 ### **Step 4: Run the Application**
 Run the project using **Maven**:
 ```sh
+mvn clean install
 mvn spring-boot:run
 ```
 The application should now be running on:  
- **http://localhost:8080**
+ http://localhost:8080
 
 ---
 
@@ -73,10 +76,10 @@ The application should now be running on:
 
 ### **2. Get All Employees**
 **`GET /api/employee/get-employee`**
-Returns all employees sorted by empId in ascending order.
+- Returns all employees sorted by empId in ascending order.
 
 ### **3. Get Employee by empId**
-`GET /api/employee/get-employee-id/{empId}`
+**`GET /api/employee/get-employee-id/{empId}`** 
 
 ### **4. Update Employee (Full & Partial Update)**
 **`PUT /api/employee/update-employee/{empId}`**  
