@@ -59,10 +59,11 @@ The application should now be running on:
 ##  API Endpoints
 
 ### **1. Create an Employee**
-**`POST /api/employees`**  
+**`POST /api/employee/create-employee`**  
 📩 **Request Body (JSON):**
 ```json
 {
+  "empId": "EMP001",
   "firstName": "John",
   "lastName": "Doe",
   "emailId": "john.doe@example.com"
@@ -71,34 +72,25 @@ The application should now be running on:
 ```
 
 ### **2. Get All Employees**
-**`GET /api/employees`**
+**`GET /api/employee/get-employee`**
+Returns all employees sorted by empId in ascending order.
 
-### **3. Get Employee by ID**
-GET /api/employees/{id}
+### **3. Get Employee by empId**
+`GET /api/employee/get-employee-id/{empId}`
 
-### **4. Update Employee**
-**`PUT /api/employees/{id}`**  
+### **4. Update Employee (Full & Partial Update)**
+**`PUT /api/employee/update-employee/{empId}`**  
 📩 **Request Body (JSON):**
 ```json
 {
-  "id": 1,
   "firstName": "Joe",
-  "lastName": "D",
   "emailId": "joe.d@example.com"
 }
 
 ```
- ### **5. Update Employee (Partially)**
-**`PATCH /api/employees/{id}`**  
-📩 **Request Body (JSON):** (You can provide one or more attributes)
-```json
-{
-  "emailId": "john.updated@example.com"
-}
-```
 
-### **6. Delete Employee**
-**`DELETE /api/employees/{id}`**
+### **5. Delete Employee**
+**`DELETE /api/employee/delete-employee/{empId}`**
 
 ---
 
