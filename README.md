@@ -2,7 +2,7 @@
 
 A **Spring Boot REST API** for managing employee records, including **CRUD operations** (Create, Read, Update, Delete) using **Spring Boot, MySQL, JPA, and Hibernate**.
 
-## 🚀 Features
+## Features
 - **Create** a new employee with custom `empId` (Numbers + Characters).
 - **Retrieve** all employees sorted by `empId` in ascending order.
 - **Retrieve** an employee by their `empId`.
@@ -13,7 +13,7 @@ A **Spring Boot REST API** for managing employee records, including **CRUD opera
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
 ![Spring Data JPA](https://img.shields.io/badge/Spring%20Data%20JPA-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
@@ -23,7 +23,7 @@ A **Spring Boot REST API** for managing employee records, including **CRUD opera
 
 ---
 
-## 👥 Installation & Setup
+## Installation & Setup
 
 ### **Step 1: Clone the Repository**
 ```sh
