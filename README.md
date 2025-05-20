@@ -97,7 +97,7 @@ The application should now be running on:
 
 ---
 
-## 🛠️ Testing with Postman
+## Testing with Postman
 1. Open **Postman**.
 2. Use the API endpoints above.
 3. Set **Content-Type** to `application/json` for `POST` and `PUT` requests.
